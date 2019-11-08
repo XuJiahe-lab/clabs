@@ -1,7 +1,21 @@
 #include <stdio.h>
+int bitcount(unsigned x);
+int bitcount(unsigned x)
+{
+    int b;
+    for (b = 0; x != 0; x >>= 1)
+    {
+        if (x & 01)
+        {
+            b++;
+        }
+    }
+    return b;
+}
 int main(void)
 {
-    char Z[10];
+    int s = bitcount(1);
+    char Z[s];
     char Y[24] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F', 'x', 'X'};
     int i, k, p;
     int n = 0;
@@ -20,23 +34,39 @@ int main(void)
         }
         if (i > 1)
         {
-            if (Z[i] <= '9' && Z[i] >= '0')
+            if (Z[i] >= '0' && Z[i] <= '9')
             {
                 n = n * 16 + (Z[i] - '0');
             }
             else
             {
-                if (Z[i] == 'a')
+                if (Z[i] == 'a' || 'A')
                 {
                     p = 10;
-                    else if (Z[i] == 'b')
-                    {
-                        p = 11;
-                    }
-                    n = n * 16 + p;
-                    printf("输入的十进制是：%d\n", n);
                 }
+                else if (Z[i] == 'b' || 'B')
+                {
+                    p = 11;
+                }
+                else if (Z[i] == 'c' || 'C')
+                {
+                    p = 12;
+                }
+                else if (Z[i] == 'd' || 'D')
+                {
+                    p = 13;
+                }
+                else if (Z[i] == 'e' || 'E')
+                {
+                    p = 14;
+                }
+                else if (Z[i] == 'f' || 'F')
+                {
+                    p = 15;
+                }
+                n = n * 16 + p;
             }
+            printf("输入数字的十进制表达: %d\n", n);
         }
     }
 }
