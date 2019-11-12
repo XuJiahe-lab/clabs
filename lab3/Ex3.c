@@ -16,7 +16,7 @@ int main(void)
 {
     int s = bitcount(1);
     char Z[s];
-    char Y[24] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F', 'x', 'X'};
+    char Y[24] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F'};
     int i, k, p;
     int n = 0;
     unsigned int h = 1;
@@ -30,7 +30,7 @@ int main(void)
     }
     if (Z[0] == '0' && (Z[1] == 'x' || Z[1] == 'X'))
     {
-        for (i = 0; Z[i] != '\n'; i++)
+        for (i = 2; Z[i] != '\n'; i++)
         {
             for (k = 0; Z[i] != Y[k] && k < 24; k++)
                 ;
@@ -75,7 +75,6 @@ int main(void)
                 }
             }
         }
-
         if (i <= 10)
         {
             printf("输入数字的十进制表达: %u\n", n);
