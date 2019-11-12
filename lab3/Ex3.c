@@ -32,7 +32,7 @@ int main(void)
     {
         for (i = 2; Z[i] != '\n'; i++)
         {
-            for (k = 0; Z[i] != Y[k] && k < 23; k++)
+            for (k = 0; Z[i] != Y[k] && k < 22; k++)
                 ;
             if (k > 21)
             {
