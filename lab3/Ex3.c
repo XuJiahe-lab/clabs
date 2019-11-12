@@ -16,7 +16,7 @@ int main(void)
 {
     int s = bitcount(1);
     char Z[s];
-    char Y[24] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F'};
+    char Y[22] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F'};
     int i, k, p;
     int n = 0;
     unsigned int h = 1;
@@ -32,9 +32,9 @@ int main(void)
     {
         for (i = 2; Z[i] != '\n'; i++)
         {
-            for (k = 0; Z[i] != Y[k] && k < 24; k++)
+            for (k = 0; Z[i] != Y[k] && k < 23; k++)
                 ;
-            if (k > 23)
+            if (k > 21)
             {
                 printf("输入了不合法的字符\n");
                 return -1;
