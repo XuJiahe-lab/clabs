@@ -75,7 +75,18 @@ int main(void)
                 }
             }
         }
-        if (i <= 10)
+        unsigned int a, b;
+        a = 0;
+        b = ~a;
+        int  g, v;
+        g = 0;
+        while (b / 16 != 0)
+        {
+           v = b / 16;
+            b = v;  
+            g++;
+        }
+        if (i <= g + 3)
         {
             printf("输入数字的十进制表达: %u\n", n);
         }
