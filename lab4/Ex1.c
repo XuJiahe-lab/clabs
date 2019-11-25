@@ -39,12 +39,13 @@ int main(void)
             break;
         case '-':
             op2 = pop();
+            push(pop() - op2);
             break;
         case '/':
             op2 = pop();
             if (op2 != 0.0)
             {
-                push(pop() - op2);
+                push(pop() / op2);
             }
             else
             {
@@ -112,6 +113,9 @@ int getop(char s[])
             s[++i] = c;
         }
         else{
+            if (c != EOF){
+                ungetch(c);
+            }
             return '-';
         }
     }
