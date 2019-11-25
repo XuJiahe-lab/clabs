@@ -12,6 +12,7 @@ void push(double);
 double pop(void);
 int getch(void);
 void ungetch(int);
+void m(void);
 
 int sp = 0;
 double val[MAXVAL];
@@ -80,7 +81,7 @@ int main(void)
             push(op2);
             break;
             case'd':/*清空栈 */
-            sp = 0;
+            m();
             break;
         case '\n':
             printf("栈的值是%.8g\n", pop());
@@ -91,6 +92,10 @@ int main(void)
         }
     }
     return 0;
+}
+
+void m(void){
+    sp = 0;
 }
 
 void push(double f)
@@ -160,8 +165,3 @@ int getch(void)
 
 void ungetch(int c)
 {
-    if (bufp >= BUFSIZE)
-        printf("ungetch: too many characters\n");
-    else
-        buf[bufp++] = c;
-}
