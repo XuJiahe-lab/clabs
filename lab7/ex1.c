@@ -2,23 +2,25 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#define MAX 100
 int main(int argc, char *argv[])
 {
-    double a[6];
-    int i, j, k = 0;
-    while(k < 6){
+    double a[MAX], min;
+    int i, k = 0;
+    while(k < 100){
+        if(argv[k + 1] == 0){
+            break;
+        }
         a[k] = atof(argv[k + 1]);
         k++;
     }
-    for (i = 0; i < 6; i++)
+    min = a[0];
+    for (i = 0; i < k; i++)
     {
-        for (j = 0; a[i] <= a[j]; j++)
-            ;
-        if (j == 5)
-        {
-            break;
+        if(min > a[i]){
+            min = a[i];
         }
     }
-    printf("%f", a[i]);
+    printf("%f", min);
     return 0;
 }
